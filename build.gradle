@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
+}
+
+group 'com.keathmilligan.ag1'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets.main.resources.srcDirs = ['assets']
+
+ext {
+    gdxVersion = '1.9.10'
+    box2DLightsVersion = '1.4'
+    ashleyVersion = '1.7.0'
+    aiVersion = '1.8.0'
+    ktxVersion = '1.9.10-b2'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    api "com.badlogicgames.gdx:gdx:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-controllers-desktop:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-controllers-platform:$gdxVersion:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-bullet-platform:$gdxVersion:natives-desktop"
+    api "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    api "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
+    api "com.badlogicgames.ashley:ashley:$ashleyVersion"
+    api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-ai:$aiVersion"
+    api "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-bullet:$gdxVersion"
+    implementation "io.github.libktx:ktx-app:$ktxVersion"
+    implementation "io.github.libktx:ktx-actors:$ktxVersion"
+    implementation "io.github.libktx:ktx-ashley:$ktxVersion"
+    implementation "io.github.libktx:ktx-assets:$ktxVersion"
+    implementation "io.github.libktx:ktx-box2d:$ktxVersion"
+    implementation "io.github.libktx:ktx-collections:$ktxVersion"
+    implementation "io.github.libktx:ktx-freetype:$ktxVersion"
+    implementation "io.github.libktx:ktx-graphics:$ktxVersion"
+    implementation "io.github.libktx:ktx-json:$ktxVersion"
+    implementation "io.github.libktx:ktx-log:$ktxVersion"
+    implementation "io.github.libktx:ktx-math:$ktxVersion"
+    implementation "io.github.libktx:ktx-scene2d:$ktxVersion"
+    implementation "io.github.libktx:ktx-style:$ktxVersion"
+    implementation "io.github.libktx:ktx-inject:$ktxVersion"
+    implementation "io.github.libktx:ktx-async:$ktxVersion"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
